@@ -4,9 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrderSoftware9000"
+        xmlns:models="clr-namespace:OrderSoftware9000.Models"
+        xmlns:viewmodels="clr-namespace:OrderSoftware9000.ViewModel"
+        xmlns:views="clr-namespace:OrderSoftware9000.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Name="MainAppWindow" Title="OrderSoftware9000" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:StartMenuViewModel}">
+            <views:StartMenuView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:OrderViewModel}">
+            <views:OrderView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MealsViewModel}">
+            <views:MealsView/>
+        </DataTemplate>
+    </Window.Resources>
+    <Window.DataContext>
+        <viewmodels:MainViewModel/>
+    </Window.DataContext>
+    
+    <ContentControl Content="{Binding Path=SelectedViewModel}" />
 </Window>
