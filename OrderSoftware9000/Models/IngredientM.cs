@@ -1,16 +1,31 @@
 ﻿using System.ComponentModel;
 
 using OrderSoftware9000.Models.Interfaces;
+using System.Text.Json;
 
 namespace OrderSoftware9000.Models
 {
-    public class Ingredient : ObservableObject, INutrients
+    public class IngredientM : ObservableObject, INutrients
     {
+        private string _name;
         private double _carbohydrates;
         private double _fat;
         private int _kcal;
-        private string _name;
         private double _protein;
+
+        public IngredientM()
+        {
+
+        }
+
+        public IngredientM(string name, int kcal, double carbohydrates, double fat, double protein)
+        {
+            Name = name;
+            Carbohydrates = carbohydrates;
+            Fat = fat;
+            Kcal = kcal;
+            Protein = protein;
+        }
 
         public double Carbohydrates
         {

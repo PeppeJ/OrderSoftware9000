@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace OrderSoftware9000.ViewModel
 {
-    public class StartMenuViewModel : ObservableObject
+    public class StartMenuVM : ObservableObject
     {
 
     }

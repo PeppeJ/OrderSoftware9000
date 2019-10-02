@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="OrderSoftware9000.Views.StartMenuView"
+﻿<UserControl x:Class="OrderSoftware9000.Views.StartMenuV"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -27,10 +27,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button Name="BtnNewOrder" 
-                    Command="{Binding DataContext.OrderViewModel, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" 
+                    Command="{Binding DataContext.OrderVM, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" 
                     Content="New Order" Grid.Row="0"/>
             <Button Name="BtnViewOrderHistory" Content="View Order History" Grid.Row="1"/>
-            <Button Name="BtnViewStock" Content="View Stock" Grid.Row="2"/>
+            <Button Name="BtnViewStock" 
+                    Command="{Binding DataContext.StockVM, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}"
+                    Content="View Stock" Grid.Row="2"/>
             <Button Name="BtnQuit" Content="Quit" Grid.Row="3"/>
         </Grid>
     </Grid>

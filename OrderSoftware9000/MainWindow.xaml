@@ -4,25 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrderSoftware9000"
-        xmlns:models="clr-namespace:OrderSoftware9000.Models"
-        xmlns:viewmodels="clr-namespace:OrderSoftware9000.ViewModel"
-        xmlns:views="clr-namespace:OrderSoftware9000.Views"
+        xmlns:vm="clr-namespace:OrderSoftware9000.ViewModel"
+        xmlns:v="clr-namespace:OrderSoftware9000.Views"
         mc:Ignorable="d"
         Name="MainAppWindow" Title="OrderSoftware9000" Height="450" Width="800">
     <Window.Resources>
-        <DataTemplate DataType="{x:Type viewmodels:StartMenuViewModel}">
-            <views:StartMenuView />
+        <DataTemplate DataType="{x:Type vm:StartMenuVM}">
+            <v:StartMenuV />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:OrderViewModel}">
-            <views:OrderView/>
+        <DataTemplate DataType="{x:Type vm:OrderVM}">
+            <v:OrderV/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:MealsViewModel}">
-            <views:MealsView/>
+        <DataTemplate DataType="{x:Type vm:MealsVM}">
+            <v:MealsV/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:StockVM}">
+            <v:StockV/>
         </DataTemplate>
     </Window.Resources>
     <Window.DataContext>
-        <viewmodels:MainViewModel/>
+        <vm:MainVM/>
     </Window.DataContext>
     
-    <ContentControl Content="{Binding Path=SelectedViewModel}" />
+    <ContentControl Content="{Binding Path=SelectedVM}" />
 </Window>

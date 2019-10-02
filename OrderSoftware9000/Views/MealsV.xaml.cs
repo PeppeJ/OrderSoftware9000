@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace OrderSoftware9000.Views
 {
     /// <summary>
-    /// Interaction logic for StartMenu.xaml
+    /// Interaction logic for MealsView.xaml
     /// </summary>
-    public partial class StartMenuView : UserControl
+    public partial class MealsV : UserControl
     {
-        public StartMenuView()
+        public MealsV()
         {
             InitializeComponent();
         }

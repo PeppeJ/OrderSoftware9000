@@ -5,10 +5,11 @@ using System.Text;
 
 namespace OrderSoftware9000.Models.Interfaces
 {
-    public interface IMeal
+    public interface IProduct
     {
         public string Name { get; set; }
         public double Cost { get; set; }
-        public ObservableCollection<Ingredient> Ingredients { get; }
+        public int Weight { get; set; }
+        public ICollection<IngredientM> Ingredients { get; }
     }
 }

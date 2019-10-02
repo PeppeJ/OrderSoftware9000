@@ -16,9 +16,9 @@ namespace OrderSoftware9000.Views
     /// <summary>
     /// Interaction logic for OrderView.xaml
     /// </summary>
-    public partial class OrderView : UserControl
+    public partial class OrderV : UserControl
     {
-        public OrderView()
+        public OrderV()
         {
             InitializeComponent();
         }

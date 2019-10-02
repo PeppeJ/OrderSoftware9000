@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,17 +10,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using OrderSoftware9000.Models;
-using OrderSoftware9000.ViewModel;
 
-namespace OrderSoftware9000
+namespace OrderSoftware9000.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for StartMenu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StartMenuV : UserControl
     {
-        public MainWindow()
+        public StartMenuV()
         {
             InitializeComponent();
         }

@@ -10,7 +10,7 @@ namespace OrderSoftware9000.Models
     public class OrderModel : ObservableObject
     {
         private double _cost;
-        private ObservableCollection<IMeal> _meals;
+        private ObservableCollection<IProduct> _meals;
 
         public OrderModel()
         {
@@ -30,14 +30,14 @@ namespace OrderSoftware9000.Models
             }
         }
 
-        public ObservableCollection<IMeal> Meals
+        public ObservableCollection<IProduct> Meals
         {
             get => _meals;
             protected set
             {
                 if (_meals == null)
                 {
-                    _meals = new ObservableCollection<IMeal>();
+                    _meals = new ObservableCollection<IProduct>();
                 }
 
                 if (_meals != value)
@@ -47,13 +47,13 @@ namespace OrderSoftware9000.Models
             }
         }
 
-        public void AddMeal(IMeal meal)
+        public void AddMeal(IProduct meal)
         {
             Meals.Add(meal);
             Cost += meal.Cost;
         }
 
-        public void RemoveMeal(IMeal meal)
+        public void RemoveMeal(IProduct meal)
         {
             Meals.Remove(meal);
             Cost -= meal.Cost;

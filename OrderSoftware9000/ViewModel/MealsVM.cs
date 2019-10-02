@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -8,16 +9,16 @@ using OrderSoftware9000.Models;
 
 namespace OrderSoftware9000.ViewModel
 {
-    public class MealsViewModel : ObservableObject
+    public class MealsVM : ObservableObject
     {
-        private MealModel[] _meals;
+        private MealM[] _meals;
 
-        public MealsViewModel()
+        public MealsVM()
         {
             object o = Application.Current.FindResource("meals");
-            _meals = (MealModel[])o;
+            _meals = (MealM[])o;
         }
 
-        public IEnumerable<MealModel> Meals => _meals;
+        public IEnumerable<MealM> Meals => _meals;
     }
 }

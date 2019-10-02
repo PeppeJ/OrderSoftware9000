@@ -1,28 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Text;
 
 using OrderSoftware9000.Models.Interfaces;
 
 namespace OrderSoftware9000.Models
 {
-    public class MealModel : ObservableObject, IMeal
+    public class MealM : ObservableObject, IProduct
     {
         private double _cost;
-        private ObservableCollection<Ingredient> _ingredients;
+        private ObservableCollection<FoodProductM> _foods;
         private string _name;
+        private int _weight;
 
-        public MealModel()
+        public ICollection<IngredientM> Ingredients { get; }
+
+        public int Weight
         {
+            get => _weight;
+            set
+            {
+                _weight = value;
+                OnPropertyChanged(nameof(Weight));
+            }
         }
 
-        public MealModel(string name, double cost, IEnumerable<Ingredient> ingredients)
+        public MealM() { }
+
+        public MealM(string name, double cost, IEnumerable<FoodProductM> ingredients)
         {
             Name = name;
             Cost = cost;
-            Ingredients = new ObservableCollection<Ingredient>(ingredients);
+            Food = new ObservableCollection<FoodProductM>(ingredients);
         }
 
         public double Cost
@@ -38,10 +46,10 @@ namespace OrderSoftware9000.Models
             }
         }
 
-        public ObservableCollection<Ingredient> Ingredients
+        public ObservableCollection<FoodProductM> Food
         {
-            get => _ingredients;
-            private set => _ingredients = value;
+            get => _foods;
+            private set => _foods = value;
         }
 
         public string Name

@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:OrderSoftware9000"
+                    xmlns:m="clr-namespace:OrderSoftware9000.Models">
+    <x:Array x:Key="meals" Type="m:MealM">
+        <m:MealM Name="Burger" Cost="80.00"/>
+        <m:MealM Name="Cheese Burger" Cost="20.00"/>
+    </x:Array>
+</ResourceDictionary>

@@ -7,7 +7,7 @@ using OrderSoftware9000.Models.Interfaces;
 
 namespace OrderSoftware9000.ViewModel
 {
-    public class OrderViewModel
+    public class OrderVM : ObservableObject
     {
         private OrderModel _selectedOrder;
 
@@ -19,7 +19,7 @@ namespace OrderSoftware9000.ViewModel
 
         public double OrderCost => SelectedOrder.Cost;
 
-        public IEnumerable<IMeal> OrderedMeals => SelectedOrder.Meals;
+        public IEnumerable<IProduct> OrderedMeals => SelectedOrder.Meals;
         //public IEnumerable<IMeal> AvailableMeals => ;
     }
 }
